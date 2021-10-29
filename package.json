@@ -17,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/bkhanal87/Tech-Blog/issues"
   },
-  "homepage": "https://github.com/bkhanal87/Tech-Blog#readme"
+  "homepage": "https://github.com/bkhanal87/Tech-Blog#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.3.2",
+    "sequelize": "^6.8.0"
+  }
 }
