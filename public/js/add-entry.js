@@ -9,7 +9,7 @@ async function newFormHandler(event) {
   ).value;
 
   // Route for adding a new post
-  const response = await fetch('/api/entries', {
+  const response = await fetch(`/api/entries`, {
     method: "POST",
     body: JSON.stringify({
       title,
@@ -17,7 +17,7 @@ async function newFormHandler(event) {
     }),
     headers: {
       "Content-Type": "application/json",
-    },
+    }
   });
 
   if (response.ok) {

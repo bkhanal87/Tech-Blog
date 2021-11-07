@@ -21,7 +21,7 @@ async function editFormHandler(event) {
     }),
     headers: {
       "Content-Type": "application/json",
-    },
+    }
   });
 
   // Redirecting to the dashboard page, if the edit action is successful. If not, error displayed
@@ -31,3 +31,5 @@ async function editFormHandler(event) {
     alert(response.statusText);
   }
 }
+
+document.querySelector(".edit-entry-form").addEventListener("submit", editFormHandler);

@@ -2,32 +2,32 @@ const { Comment } = require("../models");
 
 const commentData = [
     {
-        comment_txt: "I loved reading your blog!",
+        comment_text: "I loved reading your blog!",
         entry_id: 2,
         user_id: 3
     },
     {
-        comment_txt: "Keep up the good work!",
+        comment_text: "Keep up the good work!",
         entry_id: 1,
         user_id: 3
     },
     {
-        comment_txt: "What inspired you to write this blog?",
+        comment_text: "What inspired you to write this blog?",
         entry_id: 2,
         user_id: 2
     },
     {
-        comment_txt: "It looks like you have put a lot of effort arranging this. Well done!",
+        comment_text: "It looks like you have put a lot of effort arranging this. Well done!",
         entry_id: 1,
         user_id: 2
     },
     {
-        comment_txt: "Great job!",
+        comment_text: "Great job!",
         entry_id: 2,
         user_id: 1
     },
     {
-        comment_txt: "Fantastic!",
+        comment_text: "Fantastic!",
         entry_id: 1,
         user_id: 1
     },
