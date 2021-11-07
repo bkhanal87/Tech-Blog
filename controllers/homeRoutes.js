@@ -13,12 +13,12 @@ router.get("/", (req, res) => {
       },
       {
         model: Comment,
-        attributes: ["id", "comment_text", "entry_id", "user_id", "created_at"],
-      },
-    ],
+        attributes: ["id", "comment_text", "entry_id", "user_id", "created_at"]
+      }
+    ]
   })
     .then((dbPostData) => {
-      const posts = dbPostData.map((post) => post.get({ plain: true }));
+      const posts = dbPostData.map(post => post.get({ plain: true }));
       res.render("homepage", {
         posts,
         loggedIn: req.session.loggedIn,
@@ -47,8 +47,8 @@ router.get("/entries/:id", (req, res) => {
       {
         model: Comment,
         attributes: ["id", "comment_text", "entry_id", "user_id", "created_at"],
-      },
-    ],
+      }
+    ]
   })
     .then((dbPostData) => {
       if (!dbPostData) {
@@ -65,6 +65,17 @@ router.get("/entries/:id", (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+});
+
+//Route to redirect user to the dashboard if the user is logged in
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/dashboard');
+    return;
+
+  }
+
+  res.render('login');
 });
 
 //Route for rendering the sign up page

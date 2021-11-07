@@ -93,7 +93,6 @@ router.get('/edituser', withAuth, (req, res) => {
         }
 
         const user = dbUserData.get({ plain: true }); 
-        console.log(posts);
         res.render("edit-user", { user, loggedIn: true });
     })
     .catch(err => {

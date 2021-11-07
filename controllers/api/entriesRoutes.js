@@ -1,12 +1,12 @@
-const router = require('express').Router();
-const { User, Entry, Comment } = require('../../models');
+const router = require("express").Router();
+const { User, Entry, Comment } = require("../../models");
 
-const sequelize = require('../../config/connection');
-const withAuth = require('../../utils/auth');
+const sequelize = require("../../config/connection");
+const withAuth = require("../../utils/auth");
 
 
 // GET api/posts/ -- get all posts
-router.get('/', (req, res) => {
+router.get("/", (req, res) => {
     Entry.findAll({
         
         attributes: [
@@ -31,8 +31,7 @@ router.get('/', (req, res) => {
                 }
             }
         ]
-    })
-        .then(dbPostData => res.json(dbPostData))
+    }).then(dbPostData => res.json(dbPostData))  // return the post
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -65,10 +64,9 @@ router.get('/:id', (req, res) => {
                 }
             }
         ]
-    })
-        .then(dbPostData => {
+    }).then(dbPostData => {
             if (!dbPostData) {
-                res.status(404).json({ message: 'No post found with this id' });
+                res.status(404).json({ message: 'No post with this id was found!' });
                 return;
             }
             res.json(dbPostData);
