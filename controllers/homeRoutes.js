@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
     include: [
       {
         model: User,
-        attributes: ["name"],
+        attributes: ["name"]
       },
       {
         model: Comment,
@@ -24,7 +24,7 @@ router.get("/", (req, res) => {
         loggedIn: req.session.loggedIn,
       });
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
@@ -42,7 +42,7 @@ router.get("/entries/:id", (req, res) => {
     include: [
       {
         model: User,
-        attributes: ["name"],
+        attributes: ["name"]
       },
       {
         model: Comment,
@@ -61,7 +61,7 @@ router.get("/entries/:id", (req, res) => {
         loggedIn: req.session.loggedIn,
       });
     })
-    .catch((err) => {
+    .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });

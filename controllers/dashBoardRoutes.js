@@ -67,8 +67,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
             return;
         }
 
-        const posts = dbPostData.get({ plain: true }); 
-        console.log(posts);
+        const post = dbPostData.get({ plain: true }); 
         res.render("edit-entry", { post, loggedIn: true });
     })
     .catch(err => {
@@ -98,7 +97,7 @@ router.get('/edituser', withAuth, (req, res) => {
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
-    });
+    })
 });
 
 module.exports = router; 
