@@ -5,7 +5,7 @@ const { Entry, User, Comment } = require("../models");
 router.get("/", (req, res) => {
   Entry.findAll({
     attributes: ["id", "entry_text", "title", "created_at"],
-    order: [["created at", "DESC"]],
+    order: [["created_at", "DESC"]],
     include: [
       {
         model: User,
